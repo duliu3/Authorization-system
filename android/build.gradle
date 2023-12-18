@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '1.8.22'
     repositories {
         google()
         mavenCentral()
@@ -8,11 +8,11 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:7.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.google.gms:google-services:4.4.0'
+        //这里需要降版本否则可能识别不了 无法初始化firebase 不能用最新的4.4
+        classpath 'com.google.gms:google-services:4.3.15'
     }
 }
 
-//id 'com.google.gms.google-services' version '4.4.0' apply false
 
 allprojects {
     repositories {
